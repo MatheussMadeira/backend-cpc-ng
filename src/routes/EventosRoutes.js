@@ -1,21 +1,21 @@
 const { Router } = require("express");
-const EventosValidator = require("../Validators/EventosValidator");
-const EventosController = require("../Controllers/EventosController");
-const verificarJwt = require("../Middlewares/verificarJwt");
+const EventosValidator = require("../Validators/eventosValidator");
+const EventosController = require("../Controllers/eventosController");
+const verifyJwt = require("../Middlewares/verifyJwt");
 
 const EventosRotas = Router();
 
 EventosRotas.post("/", EventosValidator.create, EventosController.create);
-EventosRotas.get("/", verificarJwt, EventosController.read);
+EventosRotas.get("/", verifyJwt, EventosController.read);
 EventosRotas.put(
   "/:id",
-  verificarJwt,
+  verifyJwt,
   EventosValidator.update,
   EventosController.update
 );
 EventosRotas.delete(
   "/:id",
-  verificarJwt,
+  verifyJwt,
   EventosValidator.destroy,
   EventosController.delete
 );

@@ -1,23 +1,16 @@
 const mongoose = require("mongoose");
+const { string } = require("zod");
 
 const Schema = mongoose.Schema;
 
 const EventosSchema = new Schema({
-  nome: {
+  name: {
     type: string,
     unique: true,
   },
-  descricao: string,
+  description: string,
   img_URL: string,
-  Tipo: {
-    type: string,
-    unique: true,
-  },
-  id_evento: {
-    type: Schema.Types.ObjectId,
-    ref: "eventos",
-    unique: true,
-  },
+  type: string,
 });
 
 const EventosModel = mongoose.Model("eventos", EventosSchema);
