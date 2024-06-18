@@ -1,18 +1,18 @@
 const mongoose = require("mongoose");
-const { string } = require("zod");
 
 const Schema = mongoose.Schema;
 
 const EventsSchema = new Schema({
   name: {
-    type: string,
+    type: String,
     unique: true,
+    required: true,
   },
-  description: string,
-  img_URL: string,
-  type: string,
+  description: String,
+  img_URL: String,
+  type: String,
 });
 
-const EventsModel = mongoose.Model("eventos", EventsSchema);
+const EventsModel = mongoose.model("Evento", EventsSchema); // Correção: usar 'Evento' no lugar de 'eventos'
 
 module.exports = EventsModel;
