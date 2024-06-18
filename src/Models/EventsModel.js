@@ -3,7 +3,7 @@ const { string } = require("zod");
 
 const Schema = mongoose.Schema;
 
-const EventosSchema = new Schema({
+const EventsSchema = new Schema({
   name: {
     type: string,
     unique: true,
@@ -13,6 +13,6 @@ const EventosSchema = new Schema({
   type: string,
 });
 
-const EventosModel = mongoose.Model("eventos", EventosSchema);
+const EventsModel = mongoose.Model("eventos", EventsSchema);
 
-module.exports = EventosModel;
+module.exports = EventsModel;
