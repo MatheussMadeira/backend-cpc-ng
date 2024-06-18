@@ -5,9 +5,9 @@ const verifyJwt = require("../Middlewares/verifyJwt");
 
 const EventosRotas = Router();
 
-EventosRotas.post("/", EventosController.create);
+EventosRotas.post("/", EventosValidator.create, EventosController.create);
 EventosRotas.get("/", EventosController.read);
-EventosRotas.put("/:id", EventosController.update);
-EventosRotas.delete("/:id", EventosController.delete);
+EventosRotas.put("/:id", EventosValidator.update, EventosController.update);
+EventosRotas.delete("/:id", EventosValidator.destroy, EventosController.delete);
 
 module.exports = EventosRotas;
