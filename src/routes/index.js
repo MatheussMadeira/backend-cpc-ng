@@ -1,7 +1,7 @@
 const { Router } = require("express");
-const EventosRotas = require("./EventsRoutes");
+const EventsRoutes = require("./EventsRoutes");
 const rotas = Router();
 
-rotas.use("/eventos", EventosRotas);
+rotas.use("/events", EventsRoutes);
 
 module.exports = rotas;
